@@ -28,7 +28,7 @@ async function fetchCountry(countryName) {
     }
     const data = await response.json();
     createWeatherCondition(data);
-  
+    createWeatherDetails(data);
     console.log(data);
   } catch (error) {
     console.error(`Error:${error.message}`);
@@ -48,3 +48,14 @@ function createWeatherCondition(data) {
 }
 
 createWeatherCondition();
+
+function createWeatherDetails(data) {
+  humid.innerHTML += `
+  <p class="text-lg font-semibold mt-2" id="humidity">${data.current.humidity}</p>
+  `;
+  wind.innerHTML += `
+  <p class="text-lg font-semibold mt-2">${data.current.wind_kph}</p>
+  `;
+}
+
+createWeatherDetails();
