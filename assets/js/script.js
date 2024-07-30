@@ -27,9 +27,24 @@ async function fetchCountry(countryName) {
       throw new Error(`Error fetching weather data: ${response.statusText}`);
     }
     const data = await response.json();
-
+    createWeatherCondition(data);
+  
     console.log(data);
   } catch (error) {
     console.error(`Error:${error.message}`);
   }
 }
+
+function createWeatherCondition(data) {
+  weatherDegree.innerHTML = "";
+  weatherDegree.innerHTML += `
+    <img
+          src=${data.current.condition.icon}
+          alt="Weather Icon"
+          class="mx-auto mb-4 w-32 h-32"
+        />
+        <p class="text-5xl font-bold text-gray-700">${data.current.temp_c}</p>
+        <p class="text-xl text-gray-600 mt-2">${data.current.condition.text}</p>`;
+}
+
+createWeatherCondition();
