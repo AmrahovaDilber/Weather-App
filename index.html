@@ -14,16 +14,16 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body
-    class="bg-gradient-to-r from-purple-500 to-blue-500 min-h-screen flex justify-center items-center font-sans text-gray-800"
+    class="bg-gradient-to-r from-purple-500 to-blue-500 min-h-screen flex justify-center items-center font-sans text-gray-800 p-4"
   >
     <div
-      class="bg-white w-[600px] p-8 rounded-xl shadow-lg"
+      class="bg-white w-full max-w-[600px] p-6 sm:p-8 rounded-xl shadow-lg"
       id="weatherContainer"
     >
       <!-- Header -->
       <div class="text-center mb-6">
-        <h1 class="text-2xl font-bold text-blue-600">Weather App</h1>
-        <p class="text-gray-600">Get the latest weather updates</p>
+        <h1 class="text-xl sm:text-2xl font-bold text-blue-600">Weather App</h1>
+        <p class="text-sm sm:text-base text-gray-600">Get the latest weather updates</p>
       </div>
 
       <!-- Search -->
@@ -35,7 +35,7 @@
           id="input"
           type="search"
           placeholder="Enter Your Location"
-          class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-400 transition-all duration-300"
+          class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-400 transition-all duration-300 text-sm sm:text-base"
         />
         <button
           id="searchBtn"
@@ -46,30 +46,30 @@
       </div>
 
       <!-- About Weather -->
-      <div class="text-center" id="weatherDegree">
+      <div class="text-center mt-6" id="weatherDegree">
         <!-- Weather information will be injected here -->
       </div>
 
       <!-- Weather Details -->
       <div
         id="weatherDetails"
-        class="flex justify-between items-center mt-6 bg-gray-100 p-4 rounded-lg shadow-md"
+        class="flex flex-col sm:flex-row justify-between items-center mt-6 bg-gray-100 p-4 rounded-lg shadow-md gap-4"
       >
         <div class="text-center">
-          <i class="fa-solid fa-water text-blue-500 text-2xl"></i>
-          <p class="text-lg font-semibold mt-2" id="humidity"><span></span></p>
-          <p class="text-sm text-gray-600">Humidity</p>
+          <i class="fa-solid fa-water text-blue-500 text-xl sm:text-2xl"></i>
+          <p class="text-sm sm:text-lg font-semibold mt-2" id="humidity"><span></span></p>
+          <p class="text-xs sm:text-sm text-gray-600">Humidity</p>
         </div>
         <div class="text-center">
-          <i class="fa-solid fa-wind text-blue-500 text-2xl"></i>
-          <p class="text-lg font-semibold mt-2" id="wind"><span></span></p>
-          <p class="text-sm text-gray-600">Wind Speed</p>
+          <i class="fa-solid fa-wind text-blue-500 text-xl sm:text-2xl"></i>
+          <p class="text-sm sm:text-lg font-semibold mt-2" id="wind"><span></span></p>
+          <p class="text-xs sm:text-sm text-gray-600">Wind Speed</p>
         </div>
       </div>
 
       <!-- Forecast -->
       <div
-        class="forecast-container mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4"
+        class="forecast-container mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
         id="forecast"
       >
         <!-- Forecast data will be injected here -->
