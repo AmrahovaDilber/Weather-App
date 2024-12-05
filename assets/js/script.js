@@ -6,7 +6,7 @@ const humid = document.querySelector("#humidity");
 const wind = document.querySelector("#wind");
 
 const API_KEY = "47c48550175b4f4aa00122044243007";
-const BASE_URL = "http://api.weatherapi.com/v1/forecast.json"; // Corrected endpoint
+const BASE_URL = "https://api.weatherapi.com/v1/forecast.json"; 
 
 searchBtn.addEventListener("click", searchCountry);
 
